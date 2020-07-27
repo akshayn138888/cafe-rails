@@ -1,13 +1,17 @@
 
 
 <div class = "container">
-<%= form_with model: @dailyMenu, :url => { :action => "create" }   ,  local:true do |f| %>
+<%= form_with model:@daily_menu, :url => { :action => "create" }   ,  local:true do |f| %>
   <div class='form-group'>
     <%= f.label :date %>
     <%= f.date_field(:date, class: 'form-control')%>
      <br/>
-    <%= f.label :category %> 
-    <%= f.select(:categori, @category , clas: "custom-select" ) %>   
+    <%
+=begin%>
+ <%= f.label :category %> 
+    <%= f.select(:categori, @category , class: "custom-select" ) %>    
+<%
+=end%>
      <br/>     
     <%= f.label :course %> 
     <%= f.select(:course, @course, class: "custom-select"  ) %>   

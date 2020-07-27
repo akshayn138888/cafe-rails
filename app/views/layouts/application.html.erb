@@ -32,11 +32,13 @@
       </div>
     </nav>
     <div class="container-fluid">
-      <% if flash[:notice].present? || flash[:alert].present? %>
-        <div class="flash-message">
-          <%= flash[:notice] || flash[:alert] %>
-        </div>
-        <% end %>
+      <div class='container'>
+  <% flash.each do |type, message| %>
+    <div class='shadow-lg p-3 mb-5 bg-<%= type %> rounded'>
+      <%= message %>
+    </div>
+  <% end %>
+</div>
       <%= yield %>
     </div>
   </body>
