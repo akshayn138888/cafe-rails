@@ -1,0 +1,16 @@
+<div>
+  <% @attri.each do |item| %>
+  <div>
+    <h2>
+      <%= item.course.categori.name %>
+    </h2>
+    <h4>
+      <%= item.course.name %>
+    </h4>
+
+    <small> <%= item.portion %></small>
+    <p>$<%= item.price %></p>
+  </div>
+  <br /><br />
+  <% end %>
+</div>
