@@ -1,0 +1,26 @@
+
+
+<div class = "container">
+<%= form_with model:@daily_menu, :url => { :action => "create" }   ,  local:true do |f| %>
+  <div class='form-group'>
+    <%= f.label :date %>
+    <%= f.date_field(:date, class: 'form-control')%>
+     <br/>
+    <%
+=begin%>
+ <%= f.label :category %> 
+    <%= f.select(:categori, @category , class: "custom-select" ) %>    
+<%
+=end%>
+     <br/>     
+    <%= f.label :course %> 
+    <%= f.select(:course, @course, class: "custom-select"  ) %>   
+    <br/>  
+    <%= f.label :price %> 
+    <%= f.number_field(:price,  step: :any, class: 'form-control'  ) %>   
+    <br/>
+    <%= f.label :sellBy %> 
+    <%= f.select(:portion, ["by-weight(100gm)" ,"by-portion(100gm each)"] , class: "custom-select"  ) %> 
+  </div>
+  <%= f.submit "Add To Menu", class: 'btn btn-outline-primary' %>
+<% end %>
